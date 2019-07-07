@@ -1,7 +1,7 @@
 import visa
 import pyvisa
-import function_generator
-import oscilloscope 
+from Instruments import function_generator
+from Instruments import oscilloscope 
 import time
 import pylab
 import array
@@ -29,7 +29,7 @@ parameters = []
 par = [1,2,0.3,500]
 
 
-square_wave.sweep_meas(cha, sweep_function, sweep_amp, sweep_freq_start, sweep_freq_stop, sweep_duration, sweep_stops, Output, Frequency)
+function_generator.sweep_meas(cha, sweep_function, sweep_amp, sweep_freq_start, sweep_freq_stop, sweep_duration, sweep_stops, Output, Frequency)
 fitter.bipolar_reso(Output, Frequency, par, y_fit, y_ifit, parameters)
 
 mu = 1.6*(10**(-4))
