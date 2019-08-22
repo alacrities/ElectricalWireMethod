@@ -3,7 +3,7 @@ from lmfit import Model
 import pylab
 import array
 
-
+#Function for forced oscillation
 def resonance(x, c1, c2, gamma, omega):
 	return (c1*x - c2*(omega**2 - x**2)*x/((omega**2 - x**2)**2 + (2*gamma*x)**2))
 
